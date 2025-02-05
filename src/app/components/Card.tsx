@@ -8,16 +8,21 @@ interface ICardProps {
   onClick?: () => void;
 }
 const colorClasses = {
+  orange: "bg-[#e38826]",
+  teal: "bg-[#006970]",
+  "dark-green": "bg-[#004241]",
+};
+
+const colorText = {
   orange: "[#e38826]",
   teal: "[#006970]",
   "dark-green": "[#004241]",
 };
 
 const Card: React.FC<ICardProps> = (props) => {
+  console.log(`Card ${props.color}`);
   return (
-    <div
-      className={`flex flex-col p-7 bg-${colorClasses[props.color]} h-screen`}
-    >
+    <div className={`flex flex-col p-7 ${colorClasses[props.color]} h-screen`}>
       <div className={`flex flex-col gap-4`}>
         <div className="">
           <img src={props.image}></img>
@@ -29,7 +34,7 @@ const Card: React.FC<ICardProps> = (props) => {
         <a
           href="#"
           className={`bg-white py-3 px-8 border-collapse rounded-full text-${
-            colorClasses[props.color]
+            colorText[props.color]
           }`}
         >
           Learn More
