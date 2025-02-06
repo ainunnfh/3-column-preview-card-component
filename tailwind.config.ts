@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        lexend: ["Lexend_Deca", "sans-serif"],
+      },
     },
   },
   plugins: [],
