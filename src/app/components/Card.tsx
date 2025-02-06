@@ -1,4 +1,5 @@
 import React from "react";
+// import { Lexend_Deca } from "next/font/google";
 
 interface ICardProps {
   color: "orange" | "teal" | "dark-green";
@@ -20,14 +21,15 @@ const colorText = {
 };
 
 const Card: React.FC<ICardProps> = (props) => {
-  console.log(`Card ${props.color}`);
   return (
-    <div className={`flex flex-col p-7 ${colorClasses[props.color]} h-screen `}>
+    <div className={`flex flex-col p-7 ${colorClasses[props.color]} h-screen`}>
       <div className={`flex flex-col gap-4 justify-evenly md:gap-0 md:h-3/4`}>
         <div className="">
           <img src={props.image}></img>
         </div>
-        <div className="font-bold text-5xl">{props.title}</div>
+        <div className="text-5xl font-lexend uppercase font-semibold">
+          {props.title}
+        </div>
         <div className="font-normal text-[15px]">{props.description}</div>
         <div className="">
           <a
